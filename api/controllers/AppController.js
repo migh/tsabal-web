@@ -8,6 +8,7 @@
 module.exports = {
 	index: function (req, res) {
     return res.view('app/index', {
+      title: 'Tsabal',
       layout: 'layouts/standard'
     });
   }

@@ -1,16 +1,101 @@
-<div class="container">
+<div class="container-fluid">
   <nav></nav>
   <div class="row">
-    <div class="col-sm-12 text-sm-center">
-      <h1>Everything must start somewhere</h1>
+    <div class="col-sm-12">
+      <h1 class="text-sm-center">Tsabal</h1>
+      <p>Tsabal es un proyecto de creación y visualización de mallas tridimensionales en WebGL. El uso principal está asociado a la generación de mallas
+      para el programa Malledi y PLUSH, sin embargo, tiene la flexibilidad necesario para ser utilizado en otras cosas.</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6 text-sm-center">
-      <h3>First column</h3>
-    </div>
-    <div class="col-sm-6 text-sm-center">
-      <h3>Second column</h3>
+    <div class="col-sm-12">
+      <uib-tabset active="active">
+        <uib-tab index="0" heading="Malledit">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="project-name">Project:</label>
+                  <input type="text" id="project-name" class="form-control" ng-model="form.projectName">
+                </div>
+                <div class="form-group">
+                  <label for="mode">Mode:</label>
+                  <input type="radio" name="mode" id="mode" value="execution" ng-model="form.mode">Execution
+                  <input type="radio" name="mode" id="mode" value="visualization" ng-model="form.mode">Visualization
+                </div>
+                <div class="form-group">
+                  <label for="analysis-program">Analysis program</label>
+                  <input type="radio" name="analysis-program" id="analysis-program" value="PTLUSH" ng-model="form.analysisProgram">PTLUSH
+                  <input type="radio" name="analysis-program" id="analysis-program" value="PLUSH" ng-model="form.analysisProgram">PLUSH
+                </div>
+                <div class="form-group">
+                  <label for="main-axis">Analysis axis</label>
+                  <input type="radio" name="main-axis" id="main-axis" value="x" ng-model="form.mainAxis">x
+                  <input type="radio" name="main-axis" id="main-axis" value="y" ng-model="form.mainAxis">y
+                </div>
+                <div class="form-group">
+                  <label for="strata">Number of soil strata:</label>
+                  <input type="text" name="strata" id="strata" ng-model="form.soilStrata">
+                </div>
+                <fieldset>
+                  <legend>Axis offsets</legend>
+                  <div class="form-group">
+                    <label for="x-offsets">X:</label>
+                    <input type="text" name="x-offsets" id="x-offsets" ng-model="form.offsets.x">
+                  </div>
+                  <div class="form-group">
+                    <label for="y-offsets">Y:</label>
+                    <input type="text" name="y-offsets" id="y-offsets">
+                  </div>
+                  <div class="form-group">
+                    <label for="z-offsets">Z:</label>
+                    <input type="text" name="z-offsets" id="z-offsets">
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Floor map</legend>
+                  <div class="form-group">
+                    <label for="">X:</label>
+                    <input type="text" name="" id="">
+                    <label for="">Y:</label>
+                    <input type="text" name="" id="">
+                    <label for="">Floors:</label>
+                    <input type="text" name="" id="">
+                  </div>
+                </fieldset>
+                <div class="controls">
+                  <button type="button" class="btn btn-primary" ng-click="getForm()">Create JSON</button>
+                  <button type="button" class="btn btn-warning">Create .dat</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <threeangular></threeangular>
+            </div>
+          </div>
+        </uib-tab>
+        <uib-tab index="1" heading="Documentation">
+          Here goes the wiki
+        </uib-tab>
+        <uib-tab index="2" heading="About Tsabal">
+          Tsabal is a project about building a library for civil engineering and engineering in Javascript.
+        </uib-tab>
+        <uib-tab index="3" heading="Settings">
+          Not working!
+          <form>
+            <div class="form-group">
+              <label for="">Units</label>
+              <input type="radio" name="" id="">Metric system
+              <input type="radio" name="" id="">English units
+            </div>
+            <div class="form-group">
+              <label for="">Decimal separator</label>
+              <input type="radio" name="" id="">dot - .
+              <input type="radio" name="" id="">comma - ,
+            </div>
+          </form>
+        </uib-tab>
+      </uib-tabset>
     </div>
   </div>
 </div>
