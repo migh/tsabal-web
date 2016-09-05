@@ -20,28 +20,26 @@
  * http://sailsjs.org/#!/documentation/concepts/Routes/RouteTargetSyntax.html
  */
 
-module.exports.routes = {
+module.exports.routes = (function(){
+  var routes = {};
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+  function addGroup (name, groupRoutes){
+    var i;
+    for(i=0;i<groupRoutes.length;i++){
+      routes['/'+name+'/'+groupRoutes[i]] = 'AppController.'+groupRoutes[i];
+    }
+  }
 
-  '/': 'AppController.index'
+  function addApiRoutes (groupRoutes){
+    var i;
+    for(i=0;i<groupRoutes.length;i++){
+      routes['/api/'+groupRoutes[i]] = 'ApiController.'+groupRoutes[i];
+    }
+  }
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+  routes['/'] = 'AppController.index';
+  addApiRoutes(['malledi']);
 
-};
+  return routes;
+
+}());
