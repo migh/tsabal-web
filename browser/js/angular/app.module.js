@@ -12,11 +12,10 @@
 })(angular);
 
 require('./services/fileManager.service');
-
 require('./services/threejs.service');
+require('./services/tsabal.service');
 
 require('./controllers/main.controller');
 
 require('./directives/threeangular.directive');
-
-require('./filters/axis.filter');
+require('./directives/floormap.directive');
