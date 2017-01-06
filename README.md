@@ -1,7 +1,16 @@
-# Tsabal-web-server
+# Tsabal Web Client
+*****
+Tsabal web client is a web interface for visualization and creation of meshes for use with the PLUSH program or similar civil engineering applications.
 
-This is the web application for running the server and using the libraries.
+## Installation
+This web client is based on Sails, a Node.js framework that is really easy to use.
+```
+# Install all dependencies
+npm install
 
-It includes some special semantics for defining ranges:
+# Run the server
+sails lift
+```
+## Documentation
 
-[Main form settings](wiki/docs/form.md)
+For documentation please refer to this project's [Wiki](https://github.com/migh/tsabal-web/wiki).
