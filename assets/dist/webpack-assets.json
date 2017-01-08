@@ -1,0 +1,11 @@
+{
+  "vendor": {
+    "js": "vendor.js"
+  },
+  "main": {
+    "js": "main.js"
+  },
+  "polyfills": {
+    "js": "polyfills.js"
+  }
+}
