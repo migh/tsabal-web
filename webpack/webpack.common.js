@@ -129,7 +129,7 @@ module.exports = function (options) {
         {
           test: /\.css$/,
           use: ['to-string-loader', 'css-loader'],
-          exclude: [helpers.root('src', 'styles')]
+          exclude: [helpers.root('browser', 'sass')]
         },
 
         /*
@@ -139,8 +139,8 @@ module.exports = function (options) {
          */
         {
           test: /\.scss$/,
-          use: ['to-string-loader', 'css-loader', 'sass-loader'],
-          exclude: [helpers.root('src', 'styles')]
+          use: ['to-string-loader', 'css-loader', 'postcss', 'sass-loader'],
+          exclude: [helpers.root('browser', 'sass')]
         },
 
         /* Raw loader support for *.html
@@ -161,6 +161,16 @@ module.exports = function (options) {
           use: 'file-loader'
         },
 
+        {
+          test: /\.(woff2?|ttf|eot|svg)$/,
+          loader: 'url?limit=10000'
+        },
+
+        // Bootstrap 4
+        {
+          test: /bootstrap\/dist\/js\/umd\//,
+          loader: 'imports?jQuery=jquery'
+        }
       ],
 
     },

@@ -13,6 +13,7 @@ const commonConfig = require('./webpack.common.js'); // the settings that are co
  * Webpack Plugins
  */
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
@@ -69,7 +70,7 @@ module.exports = function (options) {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
-          include: [helpers.root('src', 'styles')]
+          include: [helpers.root('browser', 'sass')]
         },
 
         /*
@@ -80,7 +81,7 @@ module.exports = function (options) {
         {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
-          include: [helpers.root('src', 'styles')]
+          include: [helpers.root('browser', 'sass')]
         },
 
       ]
@@ -107,7 +108,13 @@ module.exports = function (options) {
           'HMR': METADATA.HMR,
         }
       }),
-
+      new ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        'Tether': 'tether',
+        'window.Tether': 'tether'
+      }),
       /**
        * Plugin: NamedModulesPlugin (experimental)
        * Description: Uses file names as module name.
