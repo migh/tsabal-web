@@ -20,12 +20,14 @@ webpackEmptyContext.id = 394;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(516);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sass_style_scss__ = __webpack_require__(683);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sass_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__sass_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_threeangular_threeangular_module__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sass_style_scss__ = __webpack_require__(685);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sass_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__sass_style_scss__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return App; });
+
 
 
 
@@ -33,12 +35,13 @@ webpackEmptyContext.id = 394;
 
 var App = (function () {
     function App() {
+        console.log('The app');
     }
     return App;
 }());
 App = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()],
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(), __WEBPACK_IMPORTED_MODULE_4__lib_threeangular_threeangular_module__["a" /* Threeangular */]],
         declarations: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     }),
@@ -58,14 +61,13 @@ App = __decorate([
 
 var AppComponent = (function () {
     function AppComponent() {
-        console.log('We are using Angular 2!');
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Component */])({
-        selector: 'my-app',
-        template: ''
+        selector: 'tsabal',
+        template: __webpack_require__(688)
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
@@ -74,10 +76,70 @@ AppComponent = __decorate([
 
 /***/ },
 
-/***/ 662:
+/***/ 517:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(663)();
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ThreeangularComponent; });
+
+var ThreeangularComponent = (function () {
+    function ThreeangularComponent() {
+        console.log('Threeangular component!');
+    }
+    return ThreeangularComponent;
+}());
+ThreeangularComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Component */])({
+        selector: 'threeangular',
+        template: '<div id="threeangular">Threeangular!</div>'
+    }),
+    __metadata("design:paramtypes", [])
+], ThreeangularComponent);
+
+
+
+/***/ },
+
+/***/ 518:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__threeangular_component__ = __webpack_require__(517);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Threeangular; });
+
+
+
+//import './styles/threeangular.scss';
+var Threeangular = (function () {
+    function Threeangular() {
+        console.log('Threeangular module!');
+    }
+    Threeangular.prototype.getComponent = function () {
+        return __WEBPACK_IMPORTED_MODULE_2__threeangular_component__["a" /* ThreeangularComponent */];
+    };
+    return Threeangular;
+}());
+Threeangular = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */]],
+        exports: [__WEBPACK_IMPORTED_MODULE_2__threeangular_component__["a" /* ThreeangularComponent */]],
+        declarations: [__WEBPACK_IMPORTED_MODULE_2__threeangular_component__["a" /* ThreeangularComponent */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2__threeangular_component__["a" /* ThreeangularComponent */]]
+    }),
+    __metadata("design:paramtypes", [])
+], Threeangular);
+
+
+
+/***/ },
+
+/***/ 664:
+/***/ function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(665)();
 // imports
 
 
@@ -89,16 +151,16 @@ exports.push([module.i, "/*!\n * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.
 
 /***/ },
 
-/***/ 683:
+/***/ 685:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(662);
+var content = __webpack_require__(664);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(682)(content, {});
+var update = __webpack_require__(684)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -116,7 +178,7 @@ if(false) {
 
 /***/ },
 
-/***/ 684:
+/***/ 686:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -179,7 +241,14 @@ $(function () {
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(415)))
 
+/***/ },
+
+/***/ 688:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <h1 class=\"text-sm-center\">Tsabal</h1>\n      <p>Tsabal es un proyecto de creación y visualización de mallas tridimensionales en WebGL. El uso principal está asociado a la generación de mallas\n      para el programa Malledi y PLUSH, sin embargo, tiene la flexibilidad necesario para ser utilizado en otras cosas.</p>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n\n      <ngb-tabset>\n\n        <ngb-tab title=\"Create\">\n          <template ngbTabContent>\n            <div class=\"row\">\n              <div class=\"col-sm-12 col-md-6\">\n                <form>\n                  <div class=\"form-group\">\n                    <label for=\"project-name\">Project:</label>\n                    <input type=\"text\" id=\"project-name\" class=\"form-control\" ng-model=\"form.projectName\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"mode\">Mode:</label>\n                    <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"execution\" ng-model=\"form.mode\">Execution\n                    <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"visualization\" ng-model=\"form.mode\">Visualization\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"analysis-program\">Analysis program</label>\n                    <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PTLUSH\" ng-model=\"form.analysisProgram\">PTLUSH\n                    <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PLUSH\" ng-model=\"form.analysisProgram\">PLUSH\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"main-axis\">Analysis axis</label>\n                    <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"x\" ng-model=\"form.mainAxis\">x\n                    <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"y\" ng-model=\"form.mainAxis\">y\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"strata\">Number of soil strata:</label>\n                    <input type=\"text\" name=\"strata\" id=\"strata\" ng-model=\"form.soilStrata\">\n                  </div>\n                  <fieldset>\n                    <legend>Axis offsets</legend>\n                    <div class=\"form-group\">\n                      <label for=\"x-offsets\">X:</label>\n                      <input type=\"text\" name=\"x-offsets\" id=\"x-offsets\"  ng-model=\"test\">\n                    </div>\n                    <div class=\"form-group\">\n                      <label for=\"y-offsets\">Y:</label>\n                      <input type=\"text\" name=\"y-offsets\" id=\"y-offsets\">\n                    </div>\n                    <div class=\"form-group\">\n                      <label for=\"z-offsets\">Z:</label>\n                      <input type=\"text\" name=\"z-offsets\" id=\"z-offsets\">\n                    </div>\n                  </fieldset>\n                  <fieldset>\n                    <legend>Floor map</legend>\n                    <!-- <floormap></floormap> -->\n                    <div class=\"form-group\">\n                      <label for=\"\">X:</label>\n                      <input type=\"text\" name=\"\" id=\"\">\n                      <label for=\"\">Y:</label>\n                      <input type=\"text\" name=\"\" id=\"\">\n                      <label for=\"\">Floors:</label>\n                      <input type=\"text\" name=\"\" id=\"\">\n                    </div>\n                  </fieldset>\n                  <fieldset>\n                    <legend>Modifiers</legend>\n                  </fieldset>\n                  <div class=\"controls\">\n                    <button type=\"button\" class=\"btn btn-primary\" ng-click=\"getForm()\">Create JSON</button>\n                    <button type=\"button\" class=\"btn btn-warning\">Create .dat</button>\n                  </div>\n                </form>\n              </div>\n              <div class=\"col-sm-12 col-md-6\">\n                <threeangular></threeangular>\n              </div>\n            </div>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"Learn\">\n          <template ngbTabContent>\n            Here goes the Wiki!\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"About\">\n          <template ngbTabContent>\n            Tsabal is a project about building a library for civil engineering and engineering in Javascript.\n          </template>\n        </ngb-tab>\n\n      </ngb-tabset>\n\n    </div>\n  </div>\n</div>\n"
+
 /***/ }
 
-},[684]);
+},[686]);
 //# sourceMappingURL=main.js.map

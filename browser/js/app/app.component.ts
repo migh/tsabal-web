@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: ''
+  selector: 'tsabal',
+  templateUrl: './views/tsabal.html' 
 })
 
 export class AppComponent {
   constructor(){
-    console.log('We are using Angular 2!');
   }
 }
