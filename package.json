@@ -60,13 +60,13 @@
     "angular-ui-router": "^0.3.1",
     "angular2-template-loader": "^0.6.0",
     "assets-webpack-plugin": "^3.5.0",
+    "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "bootstrap": "^4.0.0-alpha.6",
     "bootstrap-loader": "^1.0.8",
     "concurrently": "^2.2.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.26.0",
     "jasmine-core": "^2.5.2",
     "jquery": "^3.1.0",
@@ -93,5 +93,8 @@
     "webpack": "^2.2.0-rc.3",
     "webpack-merge": "^0.14.1",
     "zone.js": "^0.7.4"
+  },
+  "peerDependencies": {
+    "webpack": "^2.2.0-rc.3"
   }
 }
