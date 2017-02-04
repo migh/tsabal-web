@@ -9,7 +9,7 @@ This web client is based on Sails, a Node.js framework that is really easy to us
 npm install
 
 # Run the server
-sails lift
+npm start
 ```
 ## Documentation
 

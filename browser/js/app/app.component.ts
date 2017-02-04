@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { NotifyService }   from './modules/notify/notify';
 
 @Component({
   selector: 'tsabal',
-  templateUrl: './views/tsabal.html' 
+  templateUrl: './views/tsabal.html'
 })
 
 export class AppComponent {
-  constructor(){
+  constructor(
+    private notify: NotifyService
+  ){
   }
 }
