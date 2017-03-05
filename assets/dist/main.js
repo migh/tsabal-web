@@ -1,11 +1,35 @@
 var ac_main =
 webpackJsonpac__name_([1],{
 
+/***/ 199:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Page; });
+var Page = (function () {
+    function Page(description) {
+        this.description = description;
+        this.testMethod(description + ' initialized...');
+    }
+    Page.prototype.shout = function (msg) {
+        console.log('WE ARE SHOUTING...');
+        console.log(msg);
+    };
+    Page.prototype.testMethod = function (msg) {
+        console.log(msg);
+    };
+    return Page;
+}());
+
+
+
+/***/ },
+
 /***/ 314:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notify_module__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notify_module__ = __webpack_require__(522);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__notify_module__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notify_service__ = __webpack_require__(315);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services_notify_service__["a"]; });
@@ -24,10 +48,30 @@ webpackJsonpac__name_([1],{
 
 var NotifyService = (function () {
     function NotifyService() {
-        console.log('Notify Service launched');
+        this.messages = [];
     }
-    NotifyService.prototype.test = function () {
-        console.log('Just a test function.');
+    /**
+     * emit - Emit some message to the user
+     *
+     * @param  {type} message: Message description
+     * @return {type}                  description
+     */
+    NotifyService.prototype.emit = function (message) {
+        if (!message.id) {
+            message.id = (Math.random() * 10000) % 15;
+        }
+        if (!message.timeToLive) {
+            message.timeToLive = 500;
+        }
+        this.messages.push(message);
+    };
+    /**
+     * getMessageList - Returns the message's list
+     *
+     * @return { Array<Message> }  Return an array of messages
+     */
+    NotifyService.prototype.getMessageList = function () {
+        return this.messages;
     };
     return NotifyService;
 }());
@@ -60,16 +104,18 @@ webpackEmptyContext.id = 397;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(517);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_notify_notify__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_threeangular_threeangular__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_create_create_component__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_learn_learn_component__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_style_scss__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sass_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__sass_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_threeangular_threeangular__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_notify_notify_component__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_create_create_component__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_learn_learn_component__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_about_about_component__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_style_scss__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__sass_style_scss__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return App; });
+
 
 
 
@@ -89,7 +135,7 @@ var App = (function () {
 App = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(), __WEBPACK_IMPORTED_MODULE_5__modules_threeangular_threeangular__["a" /* ThreeangularModule */], __WEBPACK_IMPORTED_MODULE_4__modules_notify_notify__["a" /* NotifyModule */].forRoot()],
-        declarations: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_6__components_create_create_component__["a" /* CreateComponent */], __WEBPACK_IMPORTED_MODULE_7__components_learn_learn_component__["a" /* LearnComponent */], __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__["a" /* AboutComponent */]],
+        declarations: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */], __WEBPACK_IMPORTED_MODULE_6__components_notify_notify_component__["a" /* NotifyComponent */], __WEBPACK_IMPORTED_MODULE_7__components_create_create_component__["a" /* CreateComponent */], __WEBPACK_IMPORTED_MODULE_8__components_learn_learn_component__["a" /* LearnComponent */], __WEBPACK_IMPORTED_MODULE_9__components_about_about_component__["a" /* AboutComponent */]],
         providers: [__WEBPACK_IMPORTED_MODULE_4__modules_notify_notify__["b" /* NotifyService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     }),
@@ -100,7 +146,7 @@ App = __decorate([
 
 /***/ },
 
-/***/ 519:
+/***/ 517:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,10 +161,85 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal',
-        template: __webpack_require__(677)
+        template: __webpack_require__(678)
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
+
+
+
+/***/ },
+
+/***/ 518:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(199);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AboutComponent; });
+
+
+var AboutComponent = (function (_super) {
+    __extends(AboutComponent, _super);
+    function AboutComponent() {
+        var _this = _super.call(this, 'About') || this;
+        _this.shout('Welcome!!!!');
+        return _this;
+    }
+    return AboutComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__common_page_page_component__["a" /* Page */]));
+AboutComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
+        selector: 'tsabal-about',
+        template: __webpack_require__(679),
+    }),
+    __metadata("design:paramtypes", [])
+], AboutComponent);
+
+
+
+/***/ },
+
+/***/ 519:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_page_page_component__ = __webpack_require__(199);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CreateComponent; });
+
+
+
+var CreateComponent = (function (_super) {
+    __extends(CreateComponent, _super);
+    function CreateComponent(notifyService) {
+        var _this = _super.call(this, 'Create') || this;
+        _this.notifyService = notifyService;
+        return _this;
+    }
+    /**
+    * createJSON - Creates a json file containing the configuration created.
+    */
+    CreateComponent.prototype.createJSON = function () {
+        console.log('createJSON clicked');
+    };
+    /**
+     * createData - Creates a dat file containing the configuration created.
+     */
+    CreateComponent.prototype.createData = function () {
+        console.log('createData clicked');
+        this.notifyService.emit({ title: 'Some message', content: 'The content is pretty lame but here it is.' });
+    };
+    return CreateComponent;
+}(__WEBPACK_IMPORTED_MODULE_2__common_page_page_component__["a" /* Page */]));
+CreateComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
+        selector: 'tsabal-create',
+        template: __webpack_require__(680),
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__["a" /* NotifyService */]])
+], CreateComponent);
 
 
 
@@ -129,21 +250,24 @@ AppComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AboutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(199);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return LearnComponent; });
 
-var AboutComponent = (function () {
-    function AboutComponent() {
+
+var LearnComponent = (function (_super) {
+    __extends(LearnComponent, _super);
+    function LearnComponent() {
+        return _super.call(this, 'Learn') || this;
     }
-    return AboutComponent;
-}());
-AboutComponent = __decorate([
+    return LearnComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__common_page_page_component__["a" /* Page */]));
+LearnComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
-        selector: 'tsabal-about',
-        template: __webpack_require__(678),
-        styles: [__webpack_require__(700)]
+        selector: 'tsabal-learn',
+        template: __webpack_require__(681),
     }),
     __metadata("design:paramtypes", [])
-], AboutComponent);
+], LearnComponent);
 
 
 
@@ -154,52 +278,31 @@ AboutComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CreateComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(315);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NotifyComponent; });
 
-var CreateComponent = (function () {
-    function CreateComponent() {
+
+var NotifyComponent = (function () {
+    function NotifyComponent(notifyService) {
+        this.notifyService = notifyService;
+        this.messages = [];
+        this.messages = notifyService.getMessageList();
     }
-    return CreateComponent;
+    return NotifyComponent;
 }());
-CreateComponent = __decorate([
+NotifyComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
-        selector: 'tsabal-create',
-        template: __webpack_require__(679),
-        styles: [__webpack_require__(701)]
+        selector: 'tsabal-notify',
+        template: __webpack_require__(682),
     }),
-    __metadata("design:paramtypes", [])
-], CreateComponent);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__["a" /* NotifyService */]])
+], NotifyComponent);
 
 
 
 /***/ },
 
 /***/ 522:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return LearnComponent; });
-
-var LearnComponent = (function () {
-    function LearnComponent() {
-    }
-    return LearnComponent;
-}());
-LearnComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
-        selector: 'tsabal-learn',
-        template: __webpack_require__(680),
-        styles: [__webpack_require__(702)]
-    }),
-    __metadata("design:paramtypes", [])
-], LearnComponent);
-
-
-
-/***/ },
-
-/***/ 523:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -239,7 +342,7 @@ var NotifyModule_1;
 
 /***/ },
 
-/***/ 524:
+/***/ 523:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -263,13 +366,13 @@ Threeangular = __decorate([
 
 /***/ },
 
-/***/ 525:
+/***/ 524:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_threeangular_component__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_threeangular_component__ = __webpack_require__(523);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ThreeangularModule; });
 
 
@@ -298,58 +401,13 @@ ThreeangularModule = __decorate([
 
 /***/ },
 
-/***/ 526:
+/***/ 525:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__threeangular_module__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__threeangular_module__ = __webpack_require__(524);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__threeangular_module__["a"]; });
 
-
-
-/***/ },
-
-/***/ 672:
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(150)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ },
-
-/***/ 673:
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(150)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ },
-
-/***/ 674:
-/***/ function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(150)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
 
 
 /***/ },
@@ -357,7 +415,7 @@ exports.push([module.i, "", ""]);
 /***/ 675:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(150)();
+exports = module.exports = __webpack_require__(676)();
 // imports
 
 
@@ -369,35 +427,42 @@ exports.push([module.i, "/*!\n * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.
 
 /***/ },
 
-/***/ 677:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <h1 class=\"text-sm-center\">Tsabal</h1>\n      <p>Tsabal es un proyecto de creación y visualización de mallas tridimensionales en WebGL. El uso principal está asociado a la generación de mallas\n      para el programa Malledi y PLUSH, sin embargo, tiene la flexibilidad necesario para ser utilizado en otras cosas.</p>\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n\n      <ngb-tabset>\n\n        <ngb-tab title=\"Create\">\n          <template ngbTabContent>\n            <tsabal-create></tsabal-create>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"Learn\">\n          <template ngbTabContent>\n            <tsabal-learn></tsabal-learn>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"About\">\n          <template ngbTabContent>\n            <tsabal-about></tsabal-about>\n          </template>\n        </ngb-tab>\n\n      </ngb-tabset>\n\n    </div>\n  </div>\n</div>\n"
-
-/***/ },
-
 /***/ 678:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  Tsabal is a project about building a library for civil engineering and engineering in Javascript.\n</p>\n"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <h1 class=\"text-sm-center\">Tsabal</h1>\n      <p>Tsabal es un proyecto de creación y visualización de mallas tridimensionales en WebGL. El uso principal está asociado a la generación de mallas\n      para el programa Malledi y PLUSH, sin embargo, tiene la flexibilidad necesario para ser utilizado en otras cosas.</p>\n    </div>\n    <tsabal-notify></tsabal-notify>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n\n      <ngb-tabset>\n\n        <ngb-tab title=\"Create\">\n          <template ngbTabContent>\n            <tsabal-create></tsabal-create>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"Learn\">\n          <template ngbTabContent>\n            <tsabal-learn></tsabal-learn>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"About\">\n          <template ngbTabContent>\n            <tsabal-about></tsabal-about>\n          </template>\n        </ngb-tab>\n\n      </ngb-tabset>\n\n    </div>\n  </div>\n</div>\n"
 
 /***/ },
 
 /***/ 679:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-sm-12 col-md-6\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"project-name\">Project:</label>\n        <input type=\"text\" id=\"project-name\" class=\"form-control\" ng-model=\"form.projectName\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"mode\">Mode:</label>\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"execution\" ng-model=\"form.mode\">Execution\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"visualization\" ng-model=\"form.mode\">Visualization\n      </div>\n      <div class=\"form-group\">\n        <label for=\"analysis-program\">Analysis program</label>\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PTLUSH\" ng-model=\"form.analysisProgram\">PTLUSH\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PLUSH\" ng-model=\"form.analysisProgram\">PLUSH\n      </div>\n      <div class=\"form-group\">\n        <label for=\"main-axis\">Analysis axis</label>\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"x\" ng-model=\"form.mainAxis\">x\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"y\" ng-model=\"form.mainAxis\">y\n      </div>\n      <div class=\"form-group\">\n        <label for=\"strata\">Number of soil strata:</label>\n        <input type=\"text\" name=\"strata\" id=\"strata\" ng-model=\"form.soilStrata\">\n      </div>\n      <fieldset>\n        <legend>Axis offsets</legend>\n        <div class=\"form-group\">\n          <label for=\"x-offsets\">X:</label>\n          <input type=\"text\" name=\"x-offsets\" id=\"x-offsets\"  ng-model=\"test\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"y-offsets\">Y:</label>\n          <input type=\"text\" name=\"y-offsets\" id=\"y-offsets\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"z-offsets\">Z:</label>\n          <input type=\"text\" name=\"z-offsets\" id=\"z-offsets\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Floor map</legend>\n        <!-- <floormap></floormap> -->\n        <div class=\"form-group\">\n          <label for=\"\">X:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Y:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Floors:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Modifiers</legend>\n      </fieldset>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"btn btn-primary\" ng-click=\"getForm()\">Create JSON</button>\n        <button type=\"button\" class=\"btn btn-warning\">Create .dat</button>\n      </div>\n    </form>\n  </div>\n  <div class=\"col-sm-12 col-md-6\">\n    <threeangular></threeangular>\n  </div>\n</div>\n"
+module.exports = "<p>\n  Tsabal is a project about building a library for civil engineering and engineering in Javascript.\n</p>\n"
 
 /***/ },
 
 /***/ 680:
 /***/ function(module, exports) {
 
+module.exports = "<div class=\"row\">\n  <div class=\"col-sm-12 col-md-6\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"project-name\">Project:</label>\n        <input type=\"text\" id=\"project-name\" class=\"form-control\" ng-model=\"form.projectName\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"mode\">Mode:</label>\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"execution\" ng-model=\"form.mode\">Execution\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"visualization\" ng-model=\"form.mode\">Visualization\n      </div>\n      <div class=\"form-group\">\n        <label for=\"analysis-program\">Analysis program</label>\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PTLUSH\" ng-model=\"form.analysisProgram\">PTLUSH\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PLUSH\" ng-model=\"form.analysisProgram\">PLUSH\n      </div>\n      <div class=\"form-group\">\n        <label for=\"main-axis\">Analysis axis</label>\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"x\" ng-model=\"form.mainAxis\">x\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"y\" ng-model=\"form.mainAxis\">y\n      </div>\n      <div class=\"form-group\">\n        <label for=\"strata\">Number of soil strata:</label>\n        <input type=\"text\" name=\"strata\" id=\"strata\" ng-model=\"form.soilStrata\">\n      </div>\n      <fieldset>\n        <legend>Axis offsets</legend>\n        <div class=\"form-group\">\n          <label for=\"x-offsets\">X:</label>\n          <input type=\"text\" name=\"x-offsets\" id=\"x-offsets\"  ng-model=\"test\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"y-offsets\">Y:</label>\n          <input type=\"text\" name=\"y-offsets\" id=\"y-offsets\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"z-offsets\">Z:</label>\n          <input type=\"text\" name=\"z-offsets\" id=\"z-offsets\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Floor map</legend>\n        <!-- <floormap></floormap> -->\n        <div class=\"form-group\">\n          <label for=\"\">X:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Y:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Floors:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Modifiers</legend>\n      </fieldset>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"createJSON()\">Create JSON</button>\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"createData()\">Create .dat</button>\n      </div>\n    </form>\n  </div>\n  <div class=\"col-sm-12 col-md-6\">\n    <threeangular></threeangular>\n  </div>\n</div>\n"
+
+/***/ },
+
+/***/ 681:
+/***/ function(module, exports) {
+
 module.exports = "<p>\n  Here goes the Wiki!\n</p>\n"
 
 /***/ },
 
-/***/ 699:
+/***/ 682:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"notify-area\" *ngIf=\"true\">\n  <ul class=\"message-list\">\n    <li class=\"message\" *ngFor=\"let message of messages\">\n      <div class=\"header\">\n        {{ message.title }}\n      </div>\n      <div class=\"content\">\n        {{ message.content }}\n      </div>\n    </li>\n  </ul>\n</div>\n"
+
+/***/ },
+
+/***/ 701:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -406,7 +471,7 @@ module.exports = "<p>\n  Here goes the Wiki!\n</p>\n"
 var content = __webpack_require__(675);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(698)(content, {});
+var update = __webpack_require__(700)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -424,52 +489,7 @@ if(false) {
 
 /***/ },
 
-/***/ 700:
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(672);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ },
-
-/***/ 701:
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(673);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ },
-
-/***/ 702:
-/***/ function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(674);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ },
-
-/***/ 703:
+/***/ 706:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -514,5 +534,5 @@ platform.bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* Ap
 
 /***/ }
 
-},[703]);
+},[706]);
 //# sourceMappingURL=main.js.map

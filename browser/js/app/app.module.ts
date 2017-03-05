@@ -7,6 +7,7 @@ import { NotifyModule  }   from './modules/notify/notify';
 import { NotifyService }   from './modules/notify/notify';
 import { ThreeangularModule }   from './modules/threeangular/threeangular';
 
+import { NotifyComponent }  from './components/notify/notify.component';
 import { CreateComponent }  from './components/create/create.component';
 import { LearnComponent }   from './components/learn/learn.component';
 import { AboutComponent }   from './components/about/about.component';
@@ -15,7 +16,7 @@ import '../../sass/style.scss';
 
 @NgModule({
   imports:      [ BrowserModule, NgbModule.forRoot(), ThreeangularModule, NotifyModule.forRoot() ],
-  declarations: [ AppComponent, CreateComponent, LearnComponent, AboutComponent ],
+  declarations: [ AppComponent, NotifyComponent, CreateComponent, LearnComponent, AboutComponent ],
   providers:    [ NotifyService ],
   bootstrap:    [ AppComponent ]
 })
