@@ -1,45 +1,7 @@
 var ac_main =
 webpackJsonpac__name_([1],{
 
-/***/ 199:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Page; });
-var Page = (function () {
-    function Page(description) {
-        this.description = description;
-        this.testMethod(description + ' initialized...');
-    }
-    Page.prototype.shout = function (msg) {
-        console.log('WE ARE SHOUTING...');
-        console.log(msg);
-    };
-    Page.prototype.testMethod = function (msg) {
-        console.log(msg);
-    };
-    return Page;
-}());
-
-
-
-/***/ },
-
-/***/ 314:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notify_module__ = __webpack_require__(522);
-/* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__notify_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notify_service__ = __webpack_require__(315);
-/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services_notify_service__["a"]; });
-
-
-
-
-/***/ },
-
-/***/ 315:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84,6 +46,44 @@ NotifyService = __decorate([
 
 /***/ },
 
+/***/ 200:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return Page; });
+var Page = (function () {
+    function Page(description) {
+        this.description = description;
+        this.testMethod(description + ' initialized...');
+    }
+    Page.prototype.shout = function (msg) {
+        console.log('WE ARE SHOUTING...');
+        console.log(msg);
+    };
+    Page.prototype.testMethod = function (msg) {
+        console.log(msg);
+    };
+    return Page;
+}());
+
+
+
+/***/ },
+
+/***/ 315:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__notify_module__ = __webpack_require__(522);
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__notify_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_notify_service__ = __webpack_require__(139);
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services_notify_service__["a"]; });
+
+
+
+
+/***/ },
+
 /***/ 397:
 /***/ function(module, exports) {
 
@@ -106,13 +106,13 @@ webpackEmptyContext.id = 397;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_notify_notify__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_notify_notify__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_threeangular_threeangular__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_notify_notify_component__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_create_create_component__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_learn_learn_component__ = __webpack_require__(520);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_about_about_component__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_style_scss__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_style_scss__ = __webpack_require__(697);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__sass_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__sass_style_scss__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return App; });
 
@@ -161,7 +161,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal',
-        template: __webpack_require__(678)
+        template: __webpack_require__(674)
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
@@ -175,7 +175,7 @@ AppComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(200);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AboutComponent; });
 
 
@@ -191,7 +191,7 @@ var AboutComponent = (function (_super) {
 AboutComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal-about',
-        template: __webpack_require__(679),
+        template: __webpack_require__(675),
     }),
     __metadata("design:paramtypes", [])
 ], AboutComponent);
@@ -205,8 +205,8 @@ AboutComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_page_page_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_page_page_component__ = __webpack_require__(200);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CreateComponent; });
 
 
@@ -236,7 +236,7 @@ var CreateComponent = (function (_super) {
 CreateComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal-create',
-        template: __webpack_require__(680),
+        template: __webpack_require__(676),
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__["a" /* NotifyService */]])
 ], CreateComponent);
@@ -250,7 +250,7 @@ CreateComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_page_page_component__ = __webpack_require__(200);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return LearnComponent; });
 
 
@@ -264,7 +264,7 @@ var LearnComponent = (function (_super) {
 LearnComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal-learn',
-        template: __webpack_require__(681),
+        template: __webpack_require__(677),
     }),
     __metadata("design:paramtypes", [])
 ], LearnComponent);
@@ -278,7 +278,7 @@ LearnComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__ = __webpack_require__(139);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NotifyComponent; });
 
 
@@ -293,7 +293,7 @@ var NotifyComponent = (function () {
 NotifyComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Component */])({
         selector: 'tsabal-notify',
-        template: __webpack_require__(682),
+        template: __webpack_require__(678),
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__modules_notify_services_notify_service__["a" /* NotifyService */]])
 ], NotifyComponent);
@@ -308,7 +308,7 @@ NotifyComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notify_service__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_notify_service__ = __webpack_require__(139);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return NotifyModule; });
 
 
@@ -412,10 +412,10 @@ ThreeangularModule = __decorate([
 
 /***/ },
 
-/***/ 675:
+/***/ 671:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(676)();
+exports = module.exports = __webpack_require__(672)();
 // imports
 
 
@@ -427,51 +427,51 @@ exports.push([module.i, "/*!\n * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.
 
 /***/ },
 
-/***/ 678:
+/***/ 674:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n      <h1 class=\"text-sm-center\">Tsabal</h1>\n      <p>Tsabal es un proyecto de creación y visualización de mallas tridimensionales en WebGL. El uso principal está asociado a la generación de mallas\n      para el programa Malledi y PLUSH, sin embargo, tiene la flexibilidad necesario para ser utilizado en otras cosas.</p>\n    </div>\n    <tsabal-notify></tsabal-notify>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-sm-12\">\n\n      <ngb-tabset>\n\n        <ngb-tab title=\"Create\">\n          <template ngbTabContent>\n            <tsabal-create></tsabal-create>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"Learn\">\n          <template ngbTabContent>\n            <tsabal-learn></tsabal-learn>\n          </template>\n        </ngb-tab>\n\n        <ngb-tab title=\"About\">\n          <template ngbTabContent>\n            <tsabal-about></tsabal-about>\n          </template>\n        </ngb-tab>\n\n      </ngb-tabset>\n\n    </div>\n  </div>\n</div>\n"
 
 /***/ },
 
-/***/ 679:
+/***/ 675:
 /***/ function(module, exports) {
 
 module.exports = "<p>\n  Tsabal is a project about building a library for civil engineering and engineering in Javascript.\n</p>\n"
 
 /***/ },
 
-/***/ 680:
+/***/ 676:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"row\">\n  <div class=\"col-sm-12 col-md-6\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"project-name\">Project:</label>\n        <input type=\"text\" id=\"project-name\" class=\"form-control\" ng-model=\"form.projectName\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"mode\">Mode:</label>\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"execution\" ng-model=\"form.mode\">Execution\n        <input type=\"radio\" name=\"mode\" id=\"mode\" value=\"visualization\" ng-model=\"form.mode\">Visualization\n      </div>\n      <div class=\"form-group\">\n        <label for=\"analysis-program\">Analysis program</label>\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PTLUSH\" ng-model=\"form.analysisProgram\">PTLUSH\n        <input type=\"radio\" name=\"analysis-program\" id=\"analysis-program\" value=\"PLUSH\" ng-model=\"form.analysisProgram\">PLUSH\n      </div>\n      <div class=\"form-group\">\n        <label for=\"main-axis\">Analysis axis</label>\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"x\" ng-model=\"form.mainAxis\">x\n        <input type=\"radio\" name=\"main-axis\" id=\"main-axis\" value=\"y\" ng-model=\"form.mainAxis\">y\n      </div>\n      <div class=\"form-group\">\n        <label for=\"strata\">Number of soil strata:</label>\n        <input type=\"text\" name=\"strata\" id=\"strata\" ng-model=\"form.soilStrata\">\n      </div>\n      <fieldset>\n        <legend>Axis offsets</legend>\n        <div class=\"form-group\">\n          <label for=\"x-offsets\">X:</label>\n          <input type=\"text\" name=\"x-offsets\" id=\"x-offsets\"  ng-model=\"test\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"y-offsets\">Y:</label>\n          <input type=\"text\" name=\"y-offsets\" id=\"y-offsets\">\n        </div>\n        <div class=\"form-group\">\n          <label for=\"z-offsets\">Z:</label>\n          <input type=\"text\" name=\"z-offsets\" id=\"z-offsets\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Floor map</legend>\n        <!-- <floormap></floormap> -->\n        <div class=\"form-group\">\n          <label for=\"\">X:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Y:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n          <label for=\"\">Floors:</label>\n          <input type=\"text\" name=\"\" id=\"\">\n        </div>\n      </fieldset>\n      <fieldset>\n        <legend>Modifiers</legend>\n      </fieldset>\n      <div class=\"controls\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"createJSON()\">Create JSON</button>\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"createData()\">Create .dat</button>\n      </div>\n    </form>\n  </div>\n  <div class=\"col-sm-12 col-md-6\">\n    <threeangular></threeangular>\n  </div>\n</div>\n"
 
 /***/ },
 
-/***/ 681:
+/***/ 677:
 /***/ function(module, exports) {
 
 module.exports = "<p>\n  Here goes the Wiki!\n</p>\n"
 
 /***/ },
 
-/***/ 682:
+/***/ 678:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"notify-area\" *ngIf=\"true\">\n  <ul class=\"message-list\">\n    <li class=\"message\" *ngFor=\"let message of messages\">\n      <div class=\"header\">\n        {{ message.title }}\n      </div>\n      <div class=\"content\">\n        {{ message.content }}\n      </div>\n    </li>\n  </ul>\n</div>\n"
 
 /***/ },
 
-/***/ 701:
+/***/ 697:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(675);
+var content = __webpack_require__(671);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(700)(content, {});
+var update = __webpack_require__(696)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -489,7 +489,7 @@ if(false) {
 
 /***/ },
 
-/***/ 706:
+/***/ 698:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -534,5 +534,5 @@ platform.bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_app_module__["a" /* Ap
 
 /***/ }
 
-},[706]);
+},[698]);
 //# sourceMappingURL=main.js.map

@@ -53,7 +53,7 @@ module.exports = function (options) {
     entry: {
 
       'polyfills': './browser/js/polyfills.ts',
-      'main':      AOT ? './src/main.aot.ts' :
+      'main':      AOT ? './browser/js/main.aot.ts' :
                   './browser/js/main.ts'
 
     },
